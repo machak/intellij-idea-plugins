@@ -1,10 +1,10 @@
 <idea-plugin version="2">
-    <id>luonq.ScrollFromSource</id>
-    <name>Scroll From Source</name>
-    <version>1.1.0</version>
-    <vendor email="qinnanluo@sina.com" url="https://github.com/luonanqin/intellij-idea-plugins/tree/master/ScrollFromSource">luonanqin</vendor>
-    <depends>com.intellij.modules.lang</depends>
-    <description><![CDATA[
+  <id>luonq.ScrollFromSource</id>
+  <name>Scroll From Source</name>
+  <version>1.1.1</version>
+  <vendor email="qinnanluo@sina.com" url="https://github.com/luonanqin/intellij-idea-plugins/tree/master/ScrollFromSource">luonanqin</vendor>
+  <depends>com.intellij.modules.lang</depends>
+  <description><![CDATA[
       Set the keyboard shortcut to the function of "Scroll From Source" in Project Panel.<br>
       <br>
       You can set the special shortcut by yourself to all OS(Window/Linux/Mac)<br>
@@ -12,43 +12,48 @@
       Default shortcut is Command+Control+S for Mac.<br>
     ]]></description>
 
-    <change-notes><![CDATA[
-      <p>1.0.0:</p>
+  <change-notes><![CDATA[
+  <p>1.1.1:</p>
       <ul>
-        <li>Initial version</li>
+        <li>make file selected in project window</li>
+      </ul>
+     <p>1.1.0:</p>
+      <ul>
+        <li>Discard use reflecting to solve this problem</li>
+        <li>Fix bug to adapt Intellij idea 15 & WebStorm 11</li>
       </ul>
       <p>1.0.1:</p>
       <ul>
         <li>Fix bug to adapt Intellij idea 14</li>
       </ul>
-      <p>1.1.0:</p>
+
+      <p>1.0.0:</p>
       <ul>
-        <li>Discard use reflecting to solve this problem</li>
-        <li>Fix bug to adapt Intellij idea 15 & WebStorm 11</li>
+        <li>Initial version</li>
       </ul>
     ]]>
-    </change-notes>
+  </change-notes>
 
-    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-    <idea-version since-build="143.0"/>
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="143.0"/>
 
-    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
-         on how to target different products -->
-    <!--<depends>com.intellij.modules.lang</depends>-->
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!--<depends>com.intellij.modules.lang</depends>-->
 
-    <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
-    </extensions>
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
 
-    <project-components>
-        <!-- Add your project components here -->
-    </project-components>
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
 
-    <actions>
-        <!-- Add your actions here -->
-        <action id="ScrollFromSource" class="luonq.ScrollFromSource" text="Scroll From Source" description="ScrollFromSource">
-            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="EditorPopupMenu1"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="meta control S"/>
-        </action>
-    </actions>
+  <actions>
+    <!-- Add your actions here -->
+    <action id="ScrollFromSource" class="luonq.ScrollFromSource" text="Scroll From Source" description="ScrollFromSource">
+      <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="EditorPopupMenu1"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="alt S"/>
+    </action>
+  </actions>
 </idea-plugin>

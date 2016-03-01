@@ -19,19 +19,17 @@ public class ScrollFromSource extends AnAction {
 
 	public void actionPerformed(AnActionEvent e) {
 
-		Project project = e.getProject();
-		VirtualFile file = CommonDataKeys.VIRTUAL_FILE.getData(e.getDataContext());
+		final Project project = e.getProject();
+		final VirtualFile file = CommonDataKeys.VIRTUAL_FILE.getData(e.getDataContext());
 
 		if (project != null && file != null) {
-			VirtualFile target = file.getCanonicalFile();
+			final VirtualFile target = file.getCanonicalFile();
 
 			if (target != null) {
-				PsiManager psiManager = PsiManager.getInstance(project);
-				PsiFileSystemItem psiFile = target.isDirectory() ? psiManager.findDirectory(target) : psiManager.findFile(target);
-
+				final PsiManager psiManager = PsiManager.getInstance(project);
+				final PsiFileSystemItem psiFile = target.isDirectory() ? psiManager.findDirectory(target) : psiManager.findFile(target);
 				if (psiFile != null) {
-					ProjectView.getInstance(project).select(psiFile, target, false);
-
+					ProjectView.getInstance(project).select(psiFile, target, true);
 				}
 			}
 		}
